@@ -7,7 +7,6 @@ from model import MLP
 
 
 def predict():
-    # 1. 加载模型
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = MLP().to(device)
     model.load_state_dict(torch.load("mlp.pth", map_location=device,weights_only = True))
